@@ -1,3 +1,5 @@
+from node import *
+
 def forward_pass(output_node, sorted_nodes):
     """
     Performs a forward pass through a list of sorted nodes.
@@ -81,6 +83,6 @@ def sgd_update(trainables, learning_rate=1e-2):
 
         `trainables`: A list of `Input` Nodes representing weights/biases.
         `learning_rate`: The learning rate.
-    """:
+    """
     for t in trainables:
        t.value -= learning_rate * t.gradients[t]
